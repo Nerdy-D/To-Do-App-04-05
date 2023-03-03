@@ -1,0 +1,46 @@
+#addIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    width: 200px;
+    margin: auto;
+}
+
+#app {
+    background-color: aqua;
+}
+
+#to_do_list {
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+}
+
+.tasks {
+    background-color: lightgray;
+    padding: 25px;
+    border-radius: 30px;
+
+
+}
+
+h4 {
+    text-align: center;
+}
+
+.dates {
+    width: 100px;
+    margin-left: auto;
+    border: 1px solid black;
+    background-color: yellow;
+
+}
+
+.calendar {
+    height: 10%;
+    width: 10%;
+    object-fit: contain;
+}

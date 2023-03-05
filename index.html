@@ -9,28 +9,25 @@
     <link rel="stylesheet" href="to_do_app.css">
 </head>
 
-<body>
+<body id="body">
 
-    <div id="app">
-        <h1>Audio Checklist</h1>
-        <h3>Lets get ready for an event</h3>
-        <div> <!--id="addIn"-->
+    <div>
+        <div id="app">
+            <h1>Audio Checklist</h1>
+            <h3>Lets get ready for an event</h3>
+
             <input type="text" placeholder="Add an item!" id="inputTask" class="text1">
             <input type="button" value="Submit" onclick="addTask()" id="button1">
-            <input type="button" value="Clear List" id="button2">
-            <ol id="write"></ol>
-            <!-- <form>
-                <label for="addTo">To do ...</label><br>
-                <input type="text" id="addTo" name="toDo"><br>
-                <input type="submit">
-            </form>
-        -->
+            <input type="button" value="Clear Item" onclick="removeTask()" id="button2">
+
         </div>
         <div id="to_do_list">
             <div class="tasks">
                 <h4>Audio Checklist</h4>
                 Test equipment
-                <div class="dates"><img src="Calendar.png" class="calendar" />01/03/2023</div>
+                <p>Due by 25 March 2023</p>
+                <!--<p></p>
+             <div id="dates" img src="Calendar.png" class="Calendar">01/03/2023</div> -->
             </div>
 
         </div>

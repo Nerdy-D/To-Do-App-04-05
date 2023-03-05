@@ -4,6 +4,7 @@
 // addTwoNumbers(4,3)
 // create an empty array with [] 
 var tasks = [];
+loadTasks();
 
 function addTask() {
     var newTask = document.getElementById("inputTask").value;
@@ -46,9 +47,21 @@ function refreshUi() {
         addTaskToUi(task);
         console.log(task);
     });
+    saveTasks()
 }
 refreshUi();
 
+function saveTasks() {
+    var jsonTasks = JSON.stringify(tasks)
+    localStorage.setItem("savedtasks", jsonTasks)
+
+}
+function loadTasks() {
+    var loadedTasks = localStorage.getItem("savedtasks");
+    if (loadedTasks) {
+        tasks = JSON.parse(loadedTasks)
+    }
+}
 
 
 

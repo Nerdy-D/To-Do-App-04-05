@@ -7,20 +7,26 @@ var tasks = [];
 loadTasks();
 
 function addTask() {
-    var newTask = document.getElementById("inputTask").value;
+    var taskName = document.getElementById("inputTask").value;
     // if tasks array already has newTask show alert to user
-    tasks.push(newTask);
-    console.log("adding your new item:", newTask);
+    tasks.push({
+        name: taskName,
+        completed: true,
+    });
+    console.log("adding your new item:", taskName);
     console.log("all of your tasks are:", tasks);
     refreshUi();
 }
 
-function addTaskToUi(nameOfTask) {
+function addTaskToUi(taskObj) {
     // is getting ref to where we will display our tasks
     var container = document.getElementById("to_do_list");
     // is creating a new task element
     var newElement = document.createElement("div");
     newElement.className = "tasks";
+    if (taskObj.completed) {
+        newElement.className = "tasks strikethrough";
+    }
     var heading = document.createElement("h4");
     heading.innerHTML = "Audio Checklist";
     var dueDate = document.createElement("p");
@@ -29,7 +35,7 @@ function addTaskToUi(nameOfTask) {
     // var calendar = document.getElementsByClassName("calendar")
     // calendar.className = "dates"
     newElement.appendChild(heading);
-    newElement.innerHTML += nameOfTask;
+    newElement.innerHTML += taskObj.name;
     newElement.appendChild(dueDate);
     container.appendChild(newElement);
 }

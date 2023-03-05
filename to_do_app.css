@@ -53,6 +53,10 @@ p {
 
 }
 
+.strikethrough {
+    text-decoration: line-through;
+}
+
 /* #dates { 
     width: 100px;
     margin: 50px auto;

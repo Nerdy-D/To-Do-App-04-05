@@ -1,6 +1,7 @@
 /*function addTwoNumbers(a, b) {
     console.log(a + b);
 */
+// addTwoNumbers(4,3)
 // create an empty array with [] 
 var tasks = [];
 
@@ -10,10 +11,10 @@ function addTask() {
     tasks.push(newTask);
     console.log("adding your new item:", newTask);
     console.log("all of your tasks are:", tasks);
-    upDateUi(newTask);
+    refreshUi();
 }
 
-function upDateUi(nameOfTask) {
+function addTaskToUi(nameOfTask) {
     // is getting ref to where we will display our tasks
     var container = document.getElementById("to_do_list");
     // is creating a new task element
@@ -32,10 +33,25 @@ function upDateUi(nameOfTask) {
     container.appendChild(newElement);
 }
 
-/*function removeTask() {
-    var newTask = document.getElementById("inputTask").value;
+function removeTask() {
+    // var newTask = document.getElementById("inputTask").value;
     tasks.pop();
-}*/
+    refreshUi();
+}
+
+function refreshUi() {
+    var container = document.getElementById("to_do_list");
+    container.innerHTML = "";
+    tasks.forEach(task => {
+        addTaskToUi(task);
+        console.log(task);
+    });
+}
+refreshUi();
+
+
+
+
 
 /*function addCalendar() {
     var addCalendar = document.createElement("dates");
